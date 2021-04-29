@@ -32,9 +32,28 @@ checkPalindrome(prompt('Insert a word'))
 
 //Pari e Dispari:
 //L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+var choice = prompt("Choose odd or even: ")
 var userNumber = Number(prompt("Insert a number between 1 and 5"))
 
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var computerNumber = randomNumber(1, 5)
 // Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-// Dichiariamo chi ha vinto.
+
+function oddOrEven(number_1, number_2) {
+    var somma = number_1 + number_2;
+    if (somma % 2 == 0) {
+        return "even";
+    } else {
+        return 'odd';
+    }
+}
+
+if (oddOrEven(userNumber, computerNumber) == choice) {
+    console.log("You won!");
+} else {
+    console.log("Sorry. You lost!");
+}
 
